@@ -1,12 +1,10 @@
-# Project Title
-
-Cloud Pubsub Volume Tester
+# Cloud Pubsub Volume Tester
 
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-### Prerequisites
+## Prerequisites
 
 Go 1.9 or higher for build only
 
@@ -17,9 +15,7 @@ Clone and build for your use case as needed.
 ```
 go build -o pubsubgenerator
 ```
-
-
-##Commandline options
+## Commandline options
   -e	Generates and prints an example message (Optional)
   -m int
     	Used if you would like to use a message attribute for routing simulation. (Optional) (default 1)
