@@ -50,7 +50,7 @@ var (
 // Commandline checking
 func valCmdLine() {
 	flag.StringVar(&topicName, "t", "", topicNameUsage)
-	flag.StringVar(&msgNamePrefix, "n", "msg-%v", msgNamePrefixUsage)
+	flag.StringVar(&msgNamePrefix, "n", "msg", msgNamePrefixUsage)
 	flag.IntVar(&maxMsgRoutes, "m", 1, maxMsgRoutesUsage)
 	flag.IntVar(&bytesPerMessageBody, "s", 1000, bytesPerMessageBodyUsage)
 	flag.Float64Var(&messagesPerSecond, "r", 1000, messagesPerSecondUsage)
@@ -58,7 +58,7 @@ func valCmdLine() {
 	exampleMsg := flag.Bool("e", false, exampleMessageUsage)
 	flag.Parse()
 	if *exampleMsg {
-		e := &pubsub.Message{Data: []byte(randStringBytesMaskImprSrcSB(bytesPerMessageBody)), Attributes: map[string]string{msgRoute: msgRoute}}
+		e := &pubsub.Message{Data: []byte(randStringBytesMaskImprSrcSB(bytesPerMessageBody)), Attributes: map[string]string{msgRoute: fmt.Sprintf("%v-%v", msgNamePrefix, rand.Intn(maxMsgRoutes-0)+0)}}
 		bts, _ := json.Marshal(e)
 		fmt.Println(string(bts))
 		os.Exit(0)

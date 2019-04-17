@@ -18,7 +18,7 @@ go build -o pubsubgenerator
 ## Commandline options
   * -e	Generates and prints an example message (Optional)
   * -m int
-  >> 	Used if you would like to use a message attribute for routing simulation. (Optional) (default 1)
+  >> 	Used if you would like to use a message attribute for routing simulation.  It will randomly select a number from 0 to this value. (Optional) (default 1)
   * -n string
   >>  Create a prefix to the message attribute.  Default is msg-(random). (Optional) (default "msg-%v")
   * -p string

@@ -71,7 +71,7 @@ func main() {
 		// publish the generated message
 		psClient.Topic(topicName).Publish(context.Background(), &pubsub.Message{
 			Data:       []byte(*d),
-			Attributes: map[string]string{msgRoute: msgRoute},
+			Attributes: map[string]string{msgRoute: fmt.Sprintf("%v-%v", msgNamePrefix, rand.Intn(maxMsgRoutes-0)+0)},
 		})
 
 		// Incremen the counter
