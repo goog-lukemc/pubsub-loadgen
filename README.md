@@ -6,17 +6,22 @@ These instructions will get you a copy of the project up and running on your loc
 
 ## Prerequisites
 
-Go 1.9 or higher for build only
+Go 1.9 or higher
 
 ## Installing
 
-Clone and build for your use case as needed.
+Clone this repo
 
 ```
-go build -o pubsubgenerator
+go build -o pubsubvt
+```
+pubsubvt -p <<projectid>> -t <<my-test-topic>>
+```
+pubsubgene
 ```
 ## Commandline options
-  * -e	Generates and prints an example message (Optional)
+  * -e
+  >>  Generates and prints an example message (Optional)
   * -m int
   >> 	Used if you would like to use a message attribute for routing simulation.  It will randomly select a number from 0 to this value. (Optional) (default 1)
   * -n string
