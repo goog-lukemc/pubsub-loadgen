@@ -15,9 +15,9 @@ Clone this repo
 ```
 go build -o pubsubvt
 ```
-pubsubvt -p <<projectid>> -t <<my-test-topic>>
+
 ```
-pubsubgene
+pubsubvt -p <<projectid>> -t <<my-test-topic>>
 ```
 ## Commandline options
   * -e
