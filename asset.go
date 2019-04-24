@@ -27,10 +27,10 @@ import (
 
 // Static text resources
 const (
-	msgRoute                 = "msgroute"
-	topicNameUsage           = "Name of the topic to connect to.  If the topic is not found it will be created.(Required)"
-	msgNamePrefixUsage       = "Create a prefix to the message attribute.  Default is msg-(random). (Optional)"
-	maxMsgRoutesUsage        = "Used if you would like to use a message attribute for routing simulation. (Optional)"
+	msgRoute       = "msgroute"
+	topicNameUsage = "Name of the topic to connect to.  If the topic is not found it will be created.(Required)"
+	//msgNamePrefixUsage       = "Create a prefix to the message attribute.  Default is msg-(random). (Optional)"
+	//maxMsgRoutesUsage        = "Used if you would like to use a message attribute for routing simulation. (Optional)"
 	bytesPerMessageBodyUsage = "The size of the data body for the message in bytes. (Optional)"
 	messagesPerSecondUsage   = "The number of message you would like to generate per second. (Optional)"
 	projectIdUsage           = "The topic's projectid. (Required)"
@@ -40,9 +40,9 @@ const (
 
 // Globals
 var (
-	topicName           string
-	msgNamePrefix       string
-	maxMsgRoutes        int
+	topicName string
+	//msgNamePrefix       string
+	//maxMsgRoutes        int
 	bytesPerMessageBody = 1000
 	src                 = rand.NewSource(time.Now().UnixNano())
 	messagesPerSecond   float64
@@ -54,8 +54,8 @@ var (
 // Commandline checking
 func valCmdLine() {
 	flag.StringVar(&topicName, "t", "", topicNameUsage)
-	flag.StringVar(&msgNamePrefix, "n", "msg", msgNamePrefixUsage)
-	flag.IntVar(&maxMsgRoutes, "m", 1, maxMsgRoutesUsage)
+	//flag.StringVar(&msgNamePrefix, "n", "msg", msgNamePrefixUsage)
+	//flag.IntVar(&maxMsgRoutes, "m", 1, maxMsgRoutesUsage)
 	flag.IntVar(&bytesPerMessageBody, "s", 1000, bytesPerMessageBodyUsage)
 	flag.Float64Var(&messagesPerSecond, "r", 1000, messagesPerSecondUsage)
 	flag.StringVar(&projectid, "p", "", projectIdUsage)

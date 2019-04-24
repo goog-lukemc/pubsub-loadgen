@@ -4,24 +4,24 @@
 
 Go 1.9 or higher
 
-## Installing
+## Building
 
 Clone this repo
 
 ```
-go build -o pubsubvt
+go build -o pubsub-loadgen
 ```
+## Running
 
+Precompiled binaries are availble in the compiled folder
 ```
-pubsubvt -p <<projectid>> -t <<my-test-topic>>
+pubsub-loadgen -p <<projectid>> -t <<my-test-topic>>
 ```
 ## Commandline options
   * -e
   >>  Generates and prints an example message (Optional)
-  * -m int
-  >> 	Used if you would like to use a message attribute for routing simulation.  It will randomly select a number from 0 to this value. (Optional) (default 1)
-  * -n string
-  >>  Create a prefix to the message attribute.  Default is msg-(random). (Optional) (default "msg-")
+  * -m
+  >>"A comma seperated list of attribute names:value (Optional)\n Example  -g myattribute:myvalue,myattribute2:value2"
   * -p string
   >> 	The topic's projectid. (Required)
   * -r float
