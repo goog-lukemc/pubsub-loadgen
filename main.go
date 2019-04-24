@@ -66,12 +66,12 @@ func main() {
 	// Loop and send messages
 	for {
 		// Create a specifice attribute in the message so we can route if needed.
-		msgRoute := fmt.Sprintf(msgNamePrefix, rand.Intn(maxMsgRoutes))
+		//msgRoute := fmt.Sprintf(msgNamePrefix, rand.Intn(maxMsgRoutes))
 
 		// publish the generated message
 		psClient.Topic(topicName).Publish(context.Background(), &pubsub.Message{
 			Data:       []byte(*d),
-			Attributes: map[string]string{msgRoute: fmt.Sprintf("%v-%v", msgNamePrefix, rand.Intn(maxMsgRoutes-0)+0)},
+			Attributes: prepedAttributes,
 		})
 
 		// Incremen the counter
@@ -82,10 +82,12 @@ func main() {
 
 		// caculate the message per second so far
 		perSecond := cnt / elapSec
-
-		// Check is our message rate per second is higher than what we can normall sustain.
+		if perSecond < 0 {
+			perSecond = messagesPerSecond - 1
+		}
+		// Check is our message rate per second is higher than what we can normally sustain.
 		if perSecond > messagesPerSecond {
-			// If it is levelize by causing the loop to sleep
+			// App is levelized by causing the loop to sleep
 			time.Sleep(time.Millisecond * time.Duration(perSecond-messagesPerSecond))
 		}
 

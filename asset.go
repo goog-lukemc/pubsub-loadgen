@@ -19,6 +19,7 @@ import (
 	"fmt"
 	"math/rand"
 	"os"
+	"strings"
 	"time"
 
 	"cloud.google.com/go/pubsub"
@@ -34,6 +35,7 @@ const (
 	messagesPerSecondUsage   = "The number of message you would like to generate per second. (Optional)"
 	projectIdUsage           = "The topic's projectid. (Required)"
 	exampleMessageUsage      = "Generates and prints an example message (Optional)"
+	attributeTagsUsage       = "A comma seperated list of attribute names:value (Optional)\n Example  -t myattribute:myvalue,myattribute2:value2"
 )
 
 // Globals
@@ -45,6 +47,8 @@ var (
 	src                 = rand.NewSource(time.Now().UnixNano())
 	messagesPerSecond   float64
 	projectid           string
+	attributeTags       string
+	prepedAttributes    map[string]string
 )
 
 // Commandline checking
@@ -55,10 +59,12 @@ func valCmdLine() {
 	flag.IntVar(&bytesPerMessageBody, "s", 1000, bytesPerMessageBodyUsage)
 	flag.Float64Var(&messagesPerSecond, "r", 1000, messagesPerSecondUsage)
 	flag.StringVar(&projectid, "p", "", projectIdUsage)
+	flag.StringVar(&attributeTags, "g", "", attributeTagsUsage)
 	exampleMsg := flag.Bool("e", false, exampleMessageUsage)
 	flag.Parse()
+	parseTags()
 	if *exampleMsg {
-		e := &pubsub.Message{Data: []byte(randStringBytesMaskImprSrcSB(bytesPerMessageBody)), Attributes: map[string]string{msgRoute: fmt.Sprintf("%v-%v", msgNamePrefix, rand.Intn(maxMsgRoutes-0)+0)}}
+		e := &pubsub.Message{Data: []byte(randStringBytesMaskImprSrcSB(bytesPerMessageBody)), Attributes: prepedAttributes}
 		bts, _ := json.Marshal(e)
 		fmt.Println(string(bts))
 		os.Exit(0)
@@ -74,4 +80,32 @@ func valCmdLine() {
 		os.Exit(1)
 	}
 
+}
+
+func parseTags() {
+	// Make a map to populate
+	attributes := make(map[string]string)
+
+	// If it is an empty paramater return now
+	if len(attributeTags) == 0 {
+		prepedAttributes = attributes
+		return
+	}
+
+	//Split the parameter tag on a comma
+	tags := strings.Split(attributeTags, ",")
+
+	//Loop through them and see get the process the values
+	for _, tag := range tags {
+		data := strings.Split(tag, ":")
+		if len(data) == 2 {
+			attributes[data[0]] = data[1]
+		} else {
+			attributes[data[0]] = ""
+		}
+
+	}
+
+	prepedAttributes = attributes
+	return
 }
