@@ -35,7 +35,7 @@ const (
 	messagesPerSecondUsage   = "The number of message you would like to generate per second. (Optional)"
 	projectIdUsage           = "The topic's projectid. (Required)"
 	exampleMessageUsage      = "Generates and prints an example message (Optional)"
-	attributeTagsUsage       = "A comma seperated list of attribute names:value (Optional)\n Example  -t myattribute:myvalue,myattribute2:value2"
+	attributeTagsUsage       = "A comma seperated list of attribute names:value (Optional)\n Example  -g myattribute:myvalue,myattribute2:value2"
 )
 
 // Globals
