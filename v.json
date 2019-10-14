@@ -1,0 +1,696 @@
+{
+    "View": {
+        "Name": "grpc.io/client/received_bytes_per_rpc",
+        "Description": "Distribution of bytes received per RPC, by method.",
+        "TagKeys": [
+            {}
+        ],
+        "Measure": {},
+        "Aggregation": {
+            "Type": 3,
+            "Buckets": [
+                1024,
+                2048,
+                4096,
+                16384,
+                65536,
+                262144,
+                1048576,
+                4194304,
+                16777216,
+                67108864,
+                268435456,
+                1073741824,
+                4294967296
+            ]
+        }
+    },
+    "Start": "2019-10-12T19:35:48.830605177-04:00",
+    "End": "2019-10-12T19:35:52.830755781-04:00",
+    "Rows": [
+        {
+            "Tags": [
+                {
+                    "Key": {},
+                    "Value": "google.pubsub.v1.Publisher/GetTopic"
+                }
+            ],
+            "Data": {
+                "Count": 2,
+                "Min": 0,
+                "Max": 244,
+                "Mean": 122,
+                "SumOfSquaredDev": 29768,
+                "CountPerBucket": [
+                    2,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "ExemplarsPerBucket": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ]
+            }
+        },
+        {
+            "Tags": [
+                {
+                    "Key": {},
+                    "Value": "google.pubsub.v1.Publisher/Publish"
+                }
+            ],
+            "Data": {
+                "Count": 316,
+                "Min": 17,
+                "Max": 17,
+                "Mean": 17,
+                "SumOfSquaredDev": 0,
+                "CountPerBucket": [
+                    316,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "ExemplarsPerBucket": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ]
+            }
+        }
+    ]
+}
+{
+    "View": {
+        "Name": "grpc.io/client/roundtrip_latency",
+        "Description": "Distribution of round-trip latency, by method.",
+        "TagKeys": [
+            {}
+        ],
+        "Measure": {},
+        "Aggregation": {
+            "Type": 3,
+            "Buckets": [
+                0.01,
+                0.05,
+                0.1,
+                0.3,
+                0.6,
+                0.8,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                8,
+                10,
+                13,
+                16,
+                20,
+                25,
+                30,
+                40,
+                50,
+                65,
+                80,
+                100,
+                130,
+                160,
+                200,
+                250,
+                300,
+                400,
+                500,
+                650,
+                800,
+                1000,
+                2000,
+                5000,
+                10000,
+                20000,
+                50000,
+                100000
+            ]
+        }
+    },
+    "Start": "2019-10-12T19:35:48.830605177-04:00",
+    "End": "2019-10-12T19:35:52.830914083-04:00",
+    "Rows": [
+        {
+            "Tags": [
+                {
+                    "Key": {},
+                    "Value": "google.pubsub.v1.Publisher/GetTopic"
+                }
+            ],
+            "Data": {
+                "Count": 2,
+                "Min": 0.00836,
+                "Max": 533.673067,
+                "Mean": 266.84071349999994,
+                "SumOfSquaredDev": 142399.0097486979,
+                "CountPerBucket": [
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "ExemplarsPerBucket": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ]
+            }
+        },
+        {
+            "Tags": [
+                {
+                    "Key": {},
+                    "Value": "google.pubsub.v1.Publisher/Publish"
+                }
+            ],
+            "Data": {
+                "Count": 316,
+                "Min": 28.102529,
+                "Max": 216.68578,
+                "Mean": 46.57811556645569,
+                "SumOfSquaredDev": 83919.90429546873,
+                "CountPerBucket": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    120,
+                    99,
+                    81,
+                    7,
+                    4,
+                    2,
+                    1,
+                    0,
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "ExemplarsPerBucket": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ]
+            }
+        }
+    ]
+}
+{
+    "View": {
+        "Name": "grpc.io/client/completed_rpcs",
+        "Description": "Count of RPCs by method and status.",
+        "TagKeys": [
+            {},
+            {}
+        ],
+        "Measure": {},
+        "Aggregation": {
+            "Type": 1,
+            "Buckets": []
+        }
+    },
+    "Start": "2019-10-12T19:35:48.830605177-04:00",
+    "End": "2019-10-12T19:35:52.831031984-04:00",
+    "Rows": [
+        {
+            "Tags": [
+                {
+                    "Key": {},
+                    "Value": "google.pubsub.v1.Publisher/GetTopic"
+                },
+                {
+                    "Key": {},
+                    "Value": "UNAVAILABLE"
+                }
+            ],
+            "Data": {
+                "Value": 1
+            }
+        },
+        {
+            "Tags": [
+                {
+                    "Key": {},
+                    "Value": "google.pubsub.v1.Publisher/GetTopic"
+                },
+                {
+                    "Key": {},
+                    "Value": "OK"
+                }
+            ],
+            "Data": {
+                "Value": 1
+            }
+        },
+        {
+            "Tags": [
+                {
+                    "Key": {},
+                    "Value": "google.pubsub.v1.Publisher/Publish"
+                },
+                {
+                    "Key": {},
+                    "Value": "OK"
+                }
+            ],
+            "Data": {
+                "Value": 316
+            }
+        }
+    ]
+}
+{
+    "View": {
+        "Name": "cloud.google.com/go/pubsub/published_messages",
+        "Description": "Number of PubSub message published",
+        "TagKeys": [
+            {},
+            {},
+            {}
+        ],
+        "Measure": {},
+        "Aggregation": {
+            "Type": 2,
+            "Buckets": []
+        }
+    },
+    "Start": "2019-10-12T19:35:48.830605177-04:00",
+    "End": "2019-10-12T19:35:52.831080563-04:00",
+    "Rows": [
+        {
+            "Tags": [
+                {
+                    "Key": {},
+                    "Value": "OK"
+                },
+                {
+                    "Key": {},
+                    "Value": "projects/fhir-hm/topics/getterdone"
+                }
+            ],
+            "Data": {
+                "Value": 316
+            }
+        }
+    ]
+}
+{
+    "View": {
+        "Name": "cloud.google.com/go/pubsub/publish_roundtrip_latency",
+        "Description": "The latency in milliseconds per publish batch",
+        "TagKeys": [
+            {},
+            {},
+            {}
+        ],
+        "Measure": {},
+        "Aggregation": {
+            "Type": 3,
+            "Buckets": [
+                25,
+                50,
+                75,
+                100,
+                200,
+                400,
+                600,
+                800,
+                1000,
+                2000,
+                4000,
+                6000
+            ]
+        }
+    },
+    "Start": "2019-10-12T19:35:48.830605177-04:00",
+    "End": "2019-10-12T19:35:52.831120782-04:00",
+    "Rows": [
+        {
+            "Tags": [
+                {
+                    "Key": {},
+                    "Value": "OK"
+                },
+                {
+                    "Key": {},
+                    "Value": "projects/fhir-hm/topics/getterdone"
+                }
+            ],
+            "Data": {
+                "Count": 316,
+                "Min": 28,
+                "Max": 216,
+                "Mean": 46.21835443037971,
+                "SumOfSquaredDev": 83871.93354430389,
+                "CountPerBucket": [
+                    0,
+                    0,
+                    216,
+                    91,
+                    5,
+                    3,
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "ExemplarsPerBucket": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ]
+            }
+        }
+    ]
+}
+{
+    "View": {
+        "Name": "grpc.io/client/sent_bytes_per_rpc",
+        "Description": "Distribution of bytes sent per RPC, by method.",
+        "TagKeys": [
+            {}
+        ],
+        "Measure": {},
+        "Aggregation": {
+            "Type": 3,
+            "Buckets": [
+                1024,
+                2048,
+                4096,
+                16384,
+                65536,
+                262144,
+                1048576,
+                4194304,
+                16777216,
+                67108864,
+                268435456,
+                1073741824,
+                4294967296
+            ]
+        }
+    },
+    "Start": "2019-10-12T19:35:48.830605177-04:00",
+    "End": "2019-10-12T19:35:52.831207739-04:00",
+    "Rows": [
+        {
+            "Tags": [
+                {
+                    "Key": {},
+                    "Value": "google.pubsub.v1.Publisher/GetTopic"
+                }
+            ],
+            "Data": {
+                "Count": 2,
+                "Min": 0,
+                "Max": 36,
+                "Mean": 18,
+                "SumOfSquaredDev": 648,
+                "CountPerBucket": [
+                    2,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "ExemplarsPerBucket": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ]
+            }
+        },
+        {
+            "Tags": [
+                {
+                    "Key": {},
+                    "Value": "google.pubsub.v1.Publisher/Publish"
+                }
+            ],
+            "Data": {
+                "Count": 316,
+                "Min": 1107,
+                "Max": 1109,
+                "Mean": 1108.8924050632913,
+                "SumOfSquaredDev": 36.341772151884705,
+                "CountPerBucket": [
+                    0,
+                    316,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "ExemplarsPerBucket": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ]
+            }
+        }
+    ]
+}
